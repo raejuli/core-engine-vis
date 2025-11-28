@@ -1,0 +1,40 @@
+name: CI / Release
+
+on:
+    push:
+        branches:
+            - main
+
+permissions:
+    contents: write
+    packages: write
+    issues: write
+    pull-requests: write
+
+jobs:
+    build-and-release:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+            with:
+                fetch-depth: 0
+
+          - name: Setup node
+            uses: actions/setup-node@v4
+            with:
+                node-version: '18'
+                cache: 'npm'
+                registry-url: 'https://registry.npmjs.org'
+
+          - name: Install deps
+            run: npm ci
+
+          - name: Build
+            run: npm run build
+
+          - name: Run sem ver release
+            env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            run: npx semantic-release

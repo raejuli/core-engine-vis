@@ -1,0 +1,13 @@
+# Ignore development files
+tsconfig.json
+vite.config.ts
+vitest.config.ts
+node_modules/
+*.log
+.DS_Store
+.vscode/
+.idea/
+.git/
+.gitignore
+.npmrc
+package-lock.json

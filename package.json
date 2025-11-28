@@ -1,7 +1,7 @@
 {
-  "name": "core-engine-vis",
+  "name": "@raejuli/core-engine-vis",
   "version": "0.1.0",
-  "description": "Visual scripting runtime with graph sequencing for entity/component systems.",
+  "description": "Graph-based sequencing engine with decorator support for metadata",
   "license": "MIT",
   "type": "module",
   "main": "dist/core-engine-vis.cjs",
@@ -27,6 +27,12 @@
   "devDependencies": {
     "typescript": "^5.4.0",
     "vite": "^5.0.0",
-    "vitest": "^1.2.0"
+    "vitest": "^1.2.0",
+    "semantic-release": "^21.0.0",
+    "@semantic-release/commit-analyzer": "^9.0.0",
+    "@semantic-release/release-notes-generator": "^10.0.0",
+    "@semantic-release/npm": "^9.0.0",
+    "@semantic-release/github": "^9.0.0",
+    "@semantic-release/git": "^10.0.0"
   }
 }
