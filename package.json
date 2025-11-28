@@ -1,0 +1,32 @@
+{
+  "name": "core-engine-vis",
+  "version": "0.1.0",
+  "description": "Visual scripting runtime with graph sequencing for entity/component systems.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/core-engine-vis.cjs",
+  "module": "dist/core-engine-vis.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/core-engine-vis.js",
+      "require": "./dist/core-engine-vis.cjs",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.2.0"
+  }
+}
